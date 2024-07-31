@@ -1,0 +1,12 @@
+Github is a website where you can upload projects, works, and etc. for people,coworkers to see or some other reason.
+git is a programm that lets you upload projects,files to github from the visual code terminal.
+in git, you can create several versions of the same project.
+git commands:
+
+git init(when a project is recently created,to add version controll we need to use this command(this only happens once))
+
+git add . (before you create a new version of the project, you have to select the files that you want to create a new version of, and then by using this command, you will create a new version of the project/file.)
+
+git commit -m "second commit" (after git add. you have to use this commmand to create the version and name the version using the terminal (for example v0.1))
+
+git push (using this command you can upload your work on github)
