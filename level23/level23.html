@@ -1,0 +1,73 @@
+<html style="background-color:black"><!--ეს არის INLINE CSS(ეს css არის გამოყენებული tag-ებში.
+    ამის გამოყენებას ის მინუსი აქვს რომ რთულად გასარჩევი იქნება კოდი.სამაგიეროდ inline css-ით შეგილია სხვადასხვა სტილის ატრიბუტები გამოიყენო
+    და ერთმანეთისგან განასხვაო)-->
+<head><title>GOA</title>
+        <header>
+        <link rel="stylesheet" href="level23.css">
+    <!--ეს არის internal CSS(ეს CSS არის გამოყენებული style ატრიბუტით.პლიუსი ამას ის აქვს რომ ცალკე css ფაილის შექმნა არ დაგჭირდება.)-->
+    <style>h1{
+        text-align:center;color:green;border:groove;border-color:lightgreen;
+    }
+    </style>
+    <!--level23.css არის external CSS(ეს CSS არის გამოყენებული html ფაილის გარეთ, ამისი დადებითი მხარეები გამოიხატება იმაში, რომ html კოდი spaghetti-code-ს არ დაემსგავსება და
+        უფრო ორგანიზებული იქნება კოდი. )-->
+    <h1>Register</h1>
+    </header>
+</head>
+<body>
+    <form>
+        <div style="text-align:center">
+        <input type="text" placeholder="enter full name here" required name="name" ><br>
+        <input type="email" placeholder="enter E-mail here" required name="email" ><br>
+        <input type="password" placeholder="enter Password here" required name="password"><br>
+        </div>
+        
+        <div>
+        <p>Select Gender:</p>
+        <label for="male">Male</label> <label for="female">Female</label><br>
+            <input type="radio"  id="male" name="gender" required > <input type="radio"  id="female" name="gender" required><br>
+        </div>
+        
+        <div>
+        <p>do you agree with our policies?</p>
+        <label for="pol pos">yes</label><label for="pol neg">no</label><br>
+        <input type="radio"  id="pol pos" name="policy"required> <input type="radio"  id="pol neg" name="policy" required><br>
+        </div>
+       
+        
+        <div style="text-align:center">
+        <label for="hobby" id="hobby">select favourite hobby:</label>
+        <select name="hobby" id="hobby">
+            <option>sports</option>
+            <option>music</option>
+            <option>gaming</option>
+            <option>hiking</option>
+            <option>movies</option>
+            <option>reading</option>
+        </select><br>
+        </div>
+
+        <div>
+        <label for="profile" id="pf">upload profile picture:</label><br>
+        <input type="file" id="pf" name="profile"><br>
+        </div>
+
+        <div>
+        <label for="date" id="dat">please select date:</label><br>
+        <input type="date" id="dat" name="date" required><br>
+        </div>
+        
+
+        <div>
+        <input style="font-size:30px" type="submit">
+        </div>
+
+        <div>
+        <input style="font-size:30px" type="reset">
+        </div>
+        
+        
+        </form>
+
+</body>
+</html>

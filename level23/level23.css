@@ -1,0 +1,28 @@
+/*level23.css არის external CSS(ეს CSS არის გამოყენებული html ფაილის გარეთ*/
+/*selector არის html ატრიბუტი რომლის სტილის შეცვლა შეგილია (მაგალითად,P,h2,h3,img...*/
+p{
+    text-align:center;color:lightgreen;font-size:30px
+}
+body{
+    background-image: url("matrix\ background.jpg")
+}
+
+input{
+    border:dotted;color:green;
+}
+
+div{
+    text-align:center
+}
+label{
+    color:lightgreen; font-size:medium;font-size:larger;align-items:center;
+}
+select{
+    border:dotted;color:green
+}
+option{
+    color:lightgreen; font-size:medium;font-size:larger
+}
+p{
+    color:lightgreen;text-align:center;font-size:30px;
+}
