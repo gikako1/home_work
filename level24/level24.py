@@ -31,7 +31,7 @@ def numsort():
         numbers.insert(2,numbers[2]*numbers[2])
         numbers.pop(3)
     elif numbers[2]/2!=int:#კენტი
-        numbers.insert(2,numbers[1]*2)
+        numbers.insert(2,numbers[2]*2)
         numbers.pop(3)
     #3
     if numbers[3]/2==int:#ლუწი 
@@ -54,7 +54,6 @@ def numsort():
     elif numbers[5]/2!=int:#კენტი
         numbers.insert(5,numbers[5]*2)
         numbers.pop(6)
-        
         
         return print(numbers)
 numsort()
