@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <title>HWregister</title>
+            <style>
+                body{
+                    background-color:cornflowerblue;
+                    font-family:'Courier New', Courier, monospace;
+                    
+                
+                }
+                
+                h1{
+                    text-align: center;
+                    font-size:70px;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: white;
+                    
+                }
+                h2{
+                    padding:0px 5px
+                }
+                form{
+                    display:flex;
+                    flex-direction: column;
+                }
+                
+                #div1{
+                    border:solid;
+                    border-color:white;
+                    border-radius:5px;
+                    margin:5% 15% 5% 15%;
+                    background-color:white;
+                    font-size:30px;  
+                    border:double;
+                    border-radius:5px;
+                    padding:5px;
+                    text-align:center
+                    
+                    
+                }
+                p{
+                    margin:2%;
+                    padding:2px 5px
+                    
+                }
+                input{
+                    padding:5px;
+                    border:double;
+                    border-radius:5px;
+                    font-family:'Courier New', Courier, monospace;
+                    width:30%
+                }
+
+                .custom-select select {
+                appearance:none;
+                width: 30%;
+                font-size: 1.5rem;
+                padding:5px;
+                background-color:white;
+                border: 1px double gainsboro;
+                border-radius:5px;
+                color: black;
+                cursor: pointer;
+                font-family:'Courier New', Courier, monospace;
+                text-align:center
+
+                }
+                .custom-select2 select {
+                appearance:none;
+                width: 30%;
+                font-size: 1.5rem;
+                padding:5px;
+                background-color:white;
+                border: 1px double gainsboro;
+                border-radius:5px;
+                color: black;
+                cursor: pointer;
+                font-family:'Courier New', Courier, monospace;
+                display:flex;
+                margin:0% 40%
+                }
+
+                .div2{
+                    width:40%;
+                    
+                    font-family:'Courier New', Courier, monospace;
+
+                }
+            </style>
+    </head>
+    <body>
+        <h1>Register</h1>
+        <form>
+        <div id="div1">
+            <h2 style="color:cornflowerblue;font-size:40px;">General information</h2>
+            
+                <label for="fname">first name</label>
+                <input type="text" id="fname" placeholder="john" required><br>
+                <label for="Lname">Last name</label>
+                <input type="text" id="Lname" placeholder="Wick" required>
+                
+              
+                <div class="custom-select select">
+                <label for="pos">Position</label>             
+                <select for="pos">
+                    <option value="cashier">cashier</option>
+                    <option value="manager">manager</option>
+                    <option value="janitor">janitor</option>
+                    <option value="mascot">mascot</option>
+                    <option value="security">security</option>
+                </select><br>
+                <label for="Comp">Company</label>
+                <input id="Comp" type="text" placeholder="Emporio Armani" required></div>
+                
+                
+                    <label for="Barena">Business arena</label>
+                    <input id="Barena" type="text" placeholder="arena name" required>
+                    <div class="custom-select2">
+                    <label for="Employe">Employee</label>
+                    <select for="Employe">
+                        <option value="John">John</option>
+                        <option value="Carl">Carl</option>
+                        <option value="Gela">Gela</option>
+                        <option value="Mari">Mari</option>
+                        <option value="Mike tyson">Mike tyson</option>
+                    </select>
+                    </div>
+                
+                <label for="street">Street</label>
+                <input id="street" type="text" placeholder="hauser street" required><br>
+                <input type="submit">
+                
+            </div>
+            
+            
+        </form>
+        </div>
+    </body>
