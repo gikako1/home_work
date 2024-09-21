@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <style>
+            body{
+                font-size:150%;
+                font-family:monospace
+            }
+            h1{
+                text-align:center;
+            }
+            #div1{
+                rotate:90deg;
+                background-color:red;
+                width:500px;
+                height:500px;
+                border-radius:10px;
+                padding:10px;
+                text-align:center;
+                color:white;
+                
+                margin-left:10%;
+                margin-top:10%;
+                
+                transition:1.5s;
+                transition-timing-function: ease-in-out;
+
+            }
+            #div1:hover{
+                background-color:blue;
+                transform:rotate(-90deg);
+                
+            }
+            #div2{
+                rotate:-90deg;
+                background-color:green;
+                width:500px;
+                height:500px;
+                border-radius:10px;
+                padding:10px;
+                text-align:center;
+                color:white;
+                
+                margin-left:30%;
+                margin-top:20px;
+                
+                transition:1.5s;
+                transition-timing-function: ease-in-out;
+
+            }
+            #div2:hover{
+                background-color:yellow;
+                transform:rotate(90deg);
+                transform-origin:left;
+                color:black
+                
+            }
+            #div3{
+                rotate:-90deg;
+                background-color:indigo;
+                width:500px;
+                height:500px;
+                border-radius:10px;
+                padding:10px;
+                text-align:center;
+                color:black;
+                
+                margin-left:50%;
+                margin-top:20px;
+                
+                transition:1.5s;
+                transition-timing-function: ease-in-out;
+                
+
+            }
+            #div3:hover{
+                background-color:chocolate;
+                transform:rotate(90deg);
+                transform-origin:left;
+                color:white
+                
+            }
+            #div3:active{
+                transform:rotate(-90) translate(-100px,-200px) scale(2)
+            }
+            
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>Why you should start programming</h1>
+            <div id="div1">
+                Solve problems creatively: Programming is like building with logic and code. You can create anything you imagine, from games to websites to apps!
+            </div>
+            <div id="div2">
+                Boost your brainpower: Programming exercises your mind, improving your problem-solving skills and logical thinking.
+            </div>
+            <div id="div3">
+                Open doors to exciting careers: The tech world is booming, and programmers are in high demand.
+            </div>
+            <h2>And more...</h2>
+        </main>
+    </body>
+</html>
