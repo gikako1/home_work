@@ -1,0 +1,18 @@
+<!-- inline js არის ხაზში ჩასმული სკრიპტი მაგ: <button onclick="blabla"></button> -->
+<!-- internal js არის html დოკუმენტში ჩასმული სკრიპტი <script></script>-ებს შორის -->
+<!-- external js არის html-ის გარეთ ფაილის ,რომელიც უკავშირდება ამ ფაილს. -->
+
+<button onclick="window.alert('Button clicked')">click the button to click the button</button>\
+
+<script>
+    let num1=5
+    let num2=10
+</script>
+<p>
+5 
+<button id="+" onclick="window.alert(num1+num2)">+</button>
+<button onclick="window.alert(num1-num2)">-</button>
+<button onclick="window.alert(num1/num2)">/</button>
+<button onclick="window.alert(num1*num2)">*</button>
+10=
+
