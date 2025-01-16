@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <style>
+      #parent {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        border: solid;
+        border-radius: 10px;
+        margin: 0px 550px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 120%;
+      }
+      #child1 {
+        background-color: white;
+        display: grid;
+        grid-area: 1 / span 2;
+        padding: 20px;
+      }
+      #child2 {
+        background-color: rgb(1, 165, 151);
+        display: grid;
+        grid-area: 2 / span 1;
+        padding: 20px;
+      }
+      #child3 {
+        background-color: rgb(0, 196, 196);
+        display: grid;
+        grid-area: 2 / span 1;
+        padding: 20px;
+      }
+      #h2-1 {
+        color: rgb(69, 212, 117);
+      }
+      #green {
+        color: rgb(187, 255, 0);
+      }
+      #white {
+        color: white;
+      }
+      b {
+        font-size: 150%;
+        color: white;
+      }
+      #hollow {
+        color: rgba(255, 255, 255, 0.651);
+      }
+      a {
+        width: 250px;
+        height: 40px;
+        background-color: rgb(187, 255, 0);
+        border-radius: 10px;
+        text-decoration: none;
+        color: white;
+        padding: 10px;
+        align-content: center;
+        text-align: center;
+        margin: auto;
+        position: relative;
+        bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="parent">
+      <div id="child1">
+        <h2 id="h2-1">join our community</h2>
+        <p id="green">30-day,hassle-free money back guarantee</p>
+        <p>
+          gain access to our full library of tutorials along with expert code
+          reviews. perfect for any developer who is serious about honing their
+          skills.
+        </p>
+      </div>
+
+      <div id="child2">
+        <h2 id="white">monthly subscription</h2>
+        <p id="white"><b>$29</b> per month</p>
+        <p id="white">full access for less than $1 a day</p>
+        <a href="#">Sign Up</a>
+      </div>
+
+      <div id="child3">
+        <h2><b>Why us</b></h2>
+        <p id="hollow">
+          tutorials by industry experts peer and expert code review coding
+          exercises Access to our GitHub repository Community forum Flashcard
+          decks New videos every week
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
