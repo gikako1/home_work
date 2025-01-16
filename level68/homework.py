@@ -1,5 +1,4 @@
 #1 შექმენით ფუნქცია რომელიც მომხმარებელს შეაყვანინებს ტექსტს, თუ მომხმარებელს ეს ტექსტი უკვე შეყვანილი ექნება მირჩეს პროგრამა 
-# პირობა ვერ გავიგე
 def text_entry_program():
     entered_texts = set()
     
@@ -9,7 +8,7 @@ def text_entry_program():
         if user_input in entered_texts:
             print("You've already entered that text. Goodbye")
             break
-        
+
         entered_texts.add(user_input)
         print("Text added! Enter something else.")
 
