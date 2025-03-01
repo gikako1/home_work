@@ -1,0 +1,67 @@
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Udzlieresi timer</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: black;
+        color: white;
+        font-family: "Arial", sans-serif;
+        overflow: hidden;
+      }
+      .clock {
+        display: flex;
+        font-size: 100px;
+        font-weight: bold;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+      }
+      .digit {
+        padding: 10px 20px;
+        margin: 5px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        text-align: center;
+        min-width: 90px;
+      }
+      .separator {
+        padding: 0 10px;
+        font-size: 100px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clock">
+      <div class="digit" id="hours">00</div>
+      <div class="separator">:</div>
+      <div class="digit" id="minutes">00</div>
+      <div class="separator">:</div>
+      <div class="digit" id="seconds">00</div>
+    </div>
+
+    <script>
+      function updateClock() {
+        const now = new Date();
+        document.getElementById("hours").textContent = String(
+          now.getHours()
+        ).padStart(2, "0");
+        document.getElementById("minutes").textContent = String(
+          now.getMinutes()
+        ).padStart(2, "0");
+        document.getElementById("seconds").textContent = String(
+          now.getSeconds()
+        ).padStart(2, "0");
+      }
+      setInterval(updateClock, 1000);
+      updateClock();
+    </script>
+  </body>
+</html>
