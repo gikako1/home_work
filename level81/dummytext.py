@@ -1,1 +1,1 @@
-davaleba ar mogvces
+print('day 81-is davaleba ar mogvces')
