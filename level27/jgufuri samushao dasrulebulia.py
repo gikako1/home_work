@@ -1,0 +1,1 @@
+print('jgufuri samushao shesrulebulia da liders aqvs atvirtuli')

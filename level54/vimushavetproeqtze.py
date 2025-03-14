@@ -1,0 +1,1 @@
+print("aq ubralod proeqtze unda gvemushava, proeqti dasrulebulia da liderma atvirta.")

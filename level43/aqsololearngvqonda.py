@@ -1,0 +1,1 @@
+print('aq ubralod sololearn gvqonda')

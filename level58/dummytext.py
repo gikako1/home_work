@@ -1,0 +1,1 @@
+print("es level ar arsebobs gaurkveveli mizezis gamo")
