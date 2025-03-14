@@ -1,0 +1,74 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown Timer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      input {
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+      button {
+        padding: 10px;
+        margin: 5px;
+        cursor: pointer;
+      }
+      #display {
+        font-size: 24px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Countdown Timer (milliseconds)</h1>
+    <input
+      type="number"
+      id="timeInput"
+      placeholder="Enter time (ms)"
+      min="0"
+      max="10000"
+    />
+    <br />
+    <button onclick="startTimer()">Start</button>
+    <button onclick="stopTimer()">Stop</button>
+    <div id="display">0</div>
+
+    <script>
+      let timer;
+      let count = 0;
+      let maxTime = 0;
+
+      function startTimer() {
+        const inputTime = parseInt(document.getElementById("timeInput").value);
+        if (isNaN(inputTime) || inputTime < 0 || inputTime > 10000) {
+          alert("Please enter a valid time between 0 and 10000 milliseconds.");
+          return;
+        }
+        count = 0;
+        maxTime = inputTime / 1000; // Convert ms to seconds
+        document.getElementById("display").innerText = count;
+        clearInterval(timer);
+        timer = setInterval(updateTimer, 1000);
+      }
+
+      function updateTimer() {
+        if (count < maxTime) {
+          count++;
+          document.getElementById("display").innerText = count;
+        } else {
+          clearInterval(timer);
+          document.getElementById("display").innerText = "Time's up";
+        }
+      }
+
+      function stopTimer() {
+        clearInterval(timer);
+      }
+    </script>
+  </body>
+</html>
