@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #d1v {
+        background: red;
+      }
+    </style>
+    <script>
+      const pg1 = document.getElementById("paragraph1");
+      const dv1 = document.getElementById("d1v");
+      const pg2 = document.getElementById("paragraph2");
+      const dv2 = document.getElementsByClassName("d2v");
+      const firstP = document.getElementsByTagName("p");
+      function randomfunc() {
+        document.getElementById("paragraph1").innerHTML =
+          "rato damachire, ras merchodi.";
+      }
+      function p2stylefunc() {
+        document.getElementById("paragraph2").style.fontSize = "xl";
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="d1v">
+      div1
+      <p id="paragraph1" onclick="randomfunc()">paragraph1</p>
+    </div>
+
+    <div class="d2v">
+      div2
+      <p class="paragraph2" onclick="p2stylefunc()">paragraph2</p>
+    </div>
+  </body>
+</html>
