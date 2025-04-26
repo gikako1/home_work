@@ -28,3 +28,9 @@ def five(num):
 x = filter(five,listn)
 for num in x:
     print(num)
+
+#4 შექმენით Set მოცემული მნიშვნელობებით:
+setn = {"Goa", "Novatori", "Stem", 123, True, 1, False, 0}
+# და ახსენით რატომ არ გამოვა 0 და 1 
+print('რადგან set-ში 0 = False და 1 = True, აქედან გამომდინარე 1-სა და 0-ის ნაცვლად ჩაიწერება True და False')
+
