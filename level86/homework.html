@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 4vh 0px 0px 0px;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 1vw;
+        height: 90vh;
+        background-color: white;
+      }
+      section {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+      }
+      div {
+        transition: transform 0.6s;
+      }
+      div:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="first"></section>
+    <section id="second"></section>
+    <section id="third"></section>
+
+    <script>
+      let sect1 = document.getElementById("first");
+      let sect2 = document.getElementById("second");
+      let sect3 = document.getElementById("third");
+
+      let idDivs = [];
+
+      for (let i = 0; i < 9; i++) {
+        let idName = `div${i}`;
+        sect1.innerHTML += `<div id='${idName}'></div>`;
+        idDivs.push(idName);
+      }
+
+      for (let i = 0; i < 9; i++) {
+        sect2.innerHTML += "<div class='div2'></div>";
+      }
+
+      for (let i = 0; i < 9; i++) {
+        sect3.innerHTML += "<div></div>";
+      }
+
+      let classDivs = document.getElementsByClassName("div2");
+      let divs = document.getElementsByTagName("div");
+
+      for (let i = 0; i < divs.length; i++) {
+        divs[i].style.backgroundColor = "blue";
+        divs[i].style.width = "9vw";
+        divs[i].style.height = "9vw";
+      }
+
+      for (let i = 0; i < idDivs.length; i++) {
+        let elem = document.getElementById(idDivs[i]);
+
+        elem.style.backgroundColor = "red";
+      }
+
+      for (let j = 0; j < classDivs.length; j++) {
+        classDivs[j].style.backgroundColor = "green";
+      }
+    </script>
+  </body>
+</html>
