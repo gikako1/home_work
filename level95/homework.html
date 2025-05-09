@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(0, 132, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <button id="divBtn">NewDiv</button>
+    <script>
+      let btn = document.getElementById("divBtn");
+      let created = false;
+      let div;
+
+      btn.addEventListener("click", () => {
+        if (!created) {
+          div = document.createElement("div");
+          div.classList.add("animatedBox");
+          document.body.append(div);
+          created = true;
+
+          div.addEventListener("click", () => {
+            let radius = 0;
+
+            let interval1 = setInterval(() => {
+              if (radius >= 50) {
+                clearInterval(interval1);
+
+                //   0-50
+                let interval2 = setInterval(() => {
+                  if (radius <= 0) {
+                    clearInterval(interval2);
+                  } else {
+                    radius -= 2.5;
+                    div.style.borderRadius = radius + "%";
+                  }
+                }, 50);
+              } else {
+                radius += 2.5;
+                div.style.borderRadius = radius + "%";
+              }
+            }, 50);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

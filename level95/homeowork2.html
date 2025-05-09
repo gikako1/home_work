@@ -1,0 +1,162 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: white;
+        color: black;
+      }
+
+      .container {
+        position: relative;
+        width: 500px;
+        height: 500px;
+        border-width: 5px;
+        background-color: red;
+        margin-bottom: 20px;
+      }
+
+      .moving-box {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: blue;
+        top: 0;
+        left: 0;
+        transition: all 0.1s linear;
+      }
+
+      .controls {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 300px;
+      }
+
+      button {
+        padding: 10px;
+        background-color: blue;
+        color: #edefef;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2vw;
+      }
+
+      input {
+        padding: 8px;
+        border: 1px solid white;
+        outline: none;
+        background-color: blue;
+        color: white;
+        font-size: 1.1vw;
+      }
+
+      label {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Box Animation</h1>
+
+    <div class="container">
+      <div class="moving-box" id="box"></div>
+    </div>
+
+    <div class="controls">
+      <label for="duration">Enter duration:</label>
+      <input type="number" id="duration" value="5" min="1" />
+      <button id="start-btn">Start</button>
+      <button id="stop-btn">Pause/Reset</button>
+    </div>
+
+    <script>
+      let box = document.getElementById("box");
+      let startBtn = document.getElementById("start-btn");
+      let stopBtn = document.getElementById("stop-btn");
+      let durationInput = document.getElementById("duration");
+
+      let animationInterval;
+      let startTime;
+      let progress = 0;
+      let isAnimating = false;
+
+      function animateBox(currentTime) {
+        if (!startTime) startTime = currentTime;
+        let elapsed = currentTime - startTime;
+        let duration = parseInt(durationInput.value) * 1000;
+        progress = Math.min(elapsed / duration, 1);
+
+        if (progress >= 1) {
+          isAnimating = false;
+          box.style.left = "0px";
+          box.style.top = "0px";
+          return;
+        }
+
+        let containerWidth = 450;
+        let containerHeight = 450;
+
+        let x, y;
+
+        if (progress < 0.25) {
+          //// right
+          let stageProgress = progress / 0.25;
+          x = stageProgress * containerWidth;
+          y = 0;
+        } else if (progress < 0.5) {
+          //// bottom
+          let stageProgress = (progress - 0.25) / 0.25;
+          x = containerWidth;
+          y = stageProgress * containerHeight;
+        } else if (progress < 0.75) {
+          //// left
+          let stageProgress = (progress - 0.5) / 0.25;
+          x = containerWidth - stageProgress * containerWidth;
+          y = containerHeight;
+        } else {
+          //// top
+          let stageProgress = (progress - 0.75) / 0.25;
+          x = 0;
+          y = containerHeight - stageProgress * containerHeight;
+        }
+
+        box.style.left = x + "px";
+        box.style.top = y + "px";
+
+        if (isAnimating) {
+          requestAnimationFrame(animateBox);
+        }
+      }
+
+      startBtn.addEventListener("click", () => {
+        if (isAnimating) return;
+
+        let duration = parseInt(durationInput.value);
+        if (isNaN(duration) || duration <= 0) {
+          alert("please enter the right time");
+          return;
+        }
+
+        isAnimating = true;
+        progress = 0;
+        startTime = null;
+        requestAnimationFrame(animateBox);
+      });
+
+      stopBtn.addEventListener("click", () => {
+        isAnimating = false;
+        box.style.left = "0px";
+        box.style.top = "0px";
+      });
+    </script>
+  </body>
+</html>
