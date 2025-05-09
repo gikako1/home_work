@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: cyan;
+        color: teal;
+      }
+      #parent {
+        background-color: blue;
+      }
+      #parent div {
+        width: 100px;
+        height: 100px;
+        margin-top: 20px;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="userInp">Enter number</label>
+    <input type="text" id="userInp" />
+    <button id="sub">Submit</button>
+    <h1 id="h1"></h1>
+    <div id="parent">
+      <div><p></p></div>
+      <div></div>
+      <div><p></p></div>
+      <div></div>
+    </div>
+
+    <script>
+      let input = document.getElementById("userInp");
+      let par = document.getElementById("parent");
+      let sub = document.getElementById("sub");
+      let h1 = document.getElementById("h1");
+
+      sub.addEventListener("click", () => {
+        let index = parseInt(input.value);
+
+        if (index > par.children.length || index < 1) {
+          alert("Invalid index");
+          return;
+        }
+
+        for (let i = 0; i < par.children.length; i++) {
+          par.children[i].style.backgroundColor = "black";
+        }
+
+        let target = par.children[index - 1];
+        if (!isNaN(index)) {
+          target.style.backgroundColor = "red";
+        }
+
+        if (target.hasChildNodes()) {
+          h1.textContent = `Div ${index} has child`;
+          console.log("This div has child");
+        } else {
+          h1.textContent = `Div ${index} doesn't have child`;
+          console.log("This div doesn't have child");
+        }
+      });
+    </script>
+  </body>
+</html>
