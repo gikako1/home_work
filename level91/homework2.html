@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        flex-direction: row;
+        background: #0d141d;
+        color: #fffafa;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 90vh;
+        gap: 1vw;
+        font-size: 1.5vw;
+      }
+      h1 {
+        font-size: 3vw;
+      }
+      main {
+        padding: 1.5vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 2vw;
+        width: 40%;
+        height: 40vh;
+        font-size: 1.5vw;
+        background: #17252e;
+      }
+      input {
+        background-color: transparent;
+        border-radius: 20px;
+        border: #fffafa 2px solid;
+        padding: 5px;
+        color: #fffafa;
+        font-size: 1.5vw;
+        outline: none;
+      }
+      button {
+        font-size: 1.5vw;
+        border: #fffafa solid 2px;
+        color: #fffafa;
+
+        padding: 10px;
+        background-color: #17252e;
+        border-radius: 30px;
+        transition: background 0.6s, scale 0.6s;
+      }
+      button:hover {
+        background: #0d151b;
+        scale: 1.1;
+      }
+
+      section {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <label for="goalInp">Enter your goals</label>
+      <input type="text" id="goalInp" placeholder="Enter text" />
+      <button id="goalBtn">Add Goal</button>
+    </main>
+    <section>
+      <h1>Goal list</h1>
+
+      <ol></ol>
+    </section>
+
+    <script>
+      let ol = document.querySelector("ol");
+      let goal = document.getElementById("goalBtn");
+      let userInp = document.getElementById("goalInp");
+      let clickCount = 0;
+      let body = document.querySelector("body");
+
+      goal.addEventListener("click", () => {
+        if (userInp.value == "") {
+          alert("Text mustn't be empty");
+          return;
+        }
+        if (userInp.value.length < 5 || userInp.value.length > 15) {
+          alert("Enter 5-15 characters");
+          return;
+        }
+        let newGoal = document.createElement("li");
+        clickCount++;
+        newGoal.textContent = userInp.value;
+        ol.append(newGoal);
+
+        if (clickCount > 25) {
+          ol.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr";
+        } else if (clickCount > 15) {
+          ol.style.display = "grid";
+
+          ol.style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
+          ol.style.gap = "70px";
+        }
+      });
+    </script>
+  </body>
+</html>
